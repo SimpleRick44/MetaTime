@@ -29,7 +29,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Test"),backgroundColor: Colors.grey,
+        title: new Text("Zeit erfassen"),backgroundColor: Colors.grey,
       ),
      
       bottomNavigationBar: new Material(
@@ -45,7 +45,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
       body: new TabBarView(
         controller: controller,
         children: <Widget>[
-           new auto.TimerPage(),
+           new auto.Auto(),
            new manu.Manu(),
         ]
       )
