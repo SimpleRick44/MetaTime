@@ -15,7 +15,6 @@ class Manu extends StatelessWidget {
           ),
           keyboardType: TextInputType.number,
         ),
-        child: new Container()
       );
   }
 }
