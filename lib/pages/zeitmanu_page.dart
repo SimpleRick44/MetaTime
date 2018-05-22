@@ -13,7 +13,6 @@ class Manu extends StatelessWidget {
           ),
         )
       )
-      
     );
   }
 }
