@@ -5,6 +5,7 @@ class Manu extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       padding: const EdgeInsets.all(80.0),
+      margin: const EdgeInsets.only(right: 100.0),
       child: new Center(
         child: new TextField(
           decoration: new InputDecoration(
