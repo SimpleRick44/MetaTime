@@ -7,7 +7,6 @@ class Manu extends StatelessWidget {
       padding: const EdgeInsets.all(80.0),
       margin: const EdgeInsets.only(right: 100.0),
       child: new TextField(
-        style: const TextStyle(),
         decoration: new InputDecoration(
             border: const UnderlineInputBorder(
                 borderRadius: const BorderRadius.only(
