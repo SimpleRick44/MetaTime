@@ -5,8 +5,15 @@ class Manu extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       child: new Center(
-        child: new Icon(Icons.border_color, size: 150.0, color: Colors.brown)
+        child: new TextField(
+          decoration: new InputDecoration(
+            border:const UnderlineInputBorder(),
+            filled: true,
+            labelText: 'Stunden'
+          ),
+        )
       )
+      
     );
   }
 }
