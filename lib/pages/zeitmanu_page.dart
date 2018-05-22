@@ -4,15 +4,13 @@ class Manu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      child: new Center(
-        child: new TextField(
+        padding: const EdgeInsets.all(40.0),
+        child: new Center(
+            child: new TextField(
           decoration: new InputDecoration(
-            border:const UnderlineInputBorder(),
-            filled: true,
-            labelText: 'Stunden'
-          ),
-        )
-      )
-    );
+              border: const UnderlineInputBorder(),
+              filled: true,
+              labelText: 'Stunden'),
+        )));
   }
 }
