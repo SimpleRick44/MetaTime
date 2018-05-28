@@ -33,12 +33,12 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
       ),
      
       bottomNavigationBar: new Material(
-        color: Colors.grey,
+        color: Colors.white,
         child: new TabBar(
           controller: controller,
           tabs: <Tab>[
-            new Tab(icon: new Icon(Icons.timer)),
-            new Tab(icon: new Icon(Icons.border_color)),
+            new Tab(icon: new Icon(Icons.timer, color: Colors.grey,)),
+            new Tab(icon: new Icon(Icons.border_color, color: Colors.grey,)),
           ]
         )
       ),
