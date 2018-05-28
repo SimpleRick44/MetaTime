@@ -30,6 +30,16 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Zeit erfassen"),backgroundColor: Colors.grey,
+        actions: <Widget>[
+          new PopupMenuButton(
+            icon: new Icon(Icons.arrow_drop_down),
+            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+              const PopupMenuItem(
+                child: const Text('Test')
+              )
+            ]
+          )
+        ],
       ),
       bottomNavigationBar: new Material(
         color: Colors.white,
