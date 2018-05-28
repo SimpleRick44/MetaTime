@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './zeitauto_page.dart' as auto;
 import './zeitmanu_page.dart' as manu;
+import './besucherfassen_page.dart';
 
 
 
@@ -36,6 +37,9 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
             itemBuilder: (BuildContext context) => <PopupMenuEntry>[
               const PopupMenuItem(
                 child: const Text('Test')
+              ),
+              const PopupMenuItem(
+                child: Text('Test2'),
               )
             ]
           )
