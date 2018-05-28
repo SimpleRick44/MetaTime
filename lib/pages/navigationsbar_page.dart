@@ -49,9 +49,10 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
         color: Colors.white,
         child: new TabBar(
           controller: controller,
+          labelColor: Colors.black,
           tabs: <Tab>[
-            new Tab(icon: new Icon(Icons.timer, color: Colors.grey,)),
-            new Tab(icon: new Icon(Icons.border_color, color: Colors.grey,)),
+            new Tab(text: "Automatisch", icon: new Icon(Icons.timer, color: Colors.grey,)),
+            new Tab(text: "Manuell", icon: new Icon(Icons.edit, color: Colors.grey,)),
           ]
         )
       ),
