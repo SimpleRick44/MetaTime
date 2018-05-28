@@ -31,7 +31,6 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text("Zeit erfassen"),backgroundColor: Colors.grey,
       ),
-     
       bottomNavigationBar: new Material(
         color: Colors.white,
         child: new TabBar(

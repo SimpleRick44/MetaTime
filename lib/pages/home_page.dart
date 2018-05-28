@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './navigationsbar_page.dart';
 import './erfasstezeiten_page.dart';
+import './kunden_page.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
@@ -59,6 +60,13 @@ void switchUser() {
                onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new Zeiten()));
+              }
+            ),
+            new ListTile(
+              title: new Text("Kunden"),
+              trailing: new Icon(Icons.person),
+              onTap: () { Navigator.of(context).pop();
+              Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new Kunden()));
               }
             ),
             new Divider(),
