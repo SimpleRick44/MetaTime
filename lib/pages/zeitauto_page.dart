@@ -2,13 +2,37 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 
 class Auto extends StatelessWidget {
+  Color buttonColor = Colors.green;
   @override
   Widget build(BuildContext context) {
-     _getTimeApi() async {
+    /*_getTimeApi() async {
       var httpClient = new HttpClient();
       var uri = new Uri.https('https://maps.googleapis.com/maps/api/timezone/json?location=38.908133,-77.047119&timestamp=1458000000&key=AIzaSyDdSna-wkK3zLS7QrjwSap2-voSZQOtSSY', unencodedPath)
-    } 
-    return new Column(
+     } */
+    return new GestureDetector(
+      child: new Center(
+        child: new RaisedButton(
+          padding:
+              EdgeInsets.only(left: 65.0, right: 65.0, bottom: 50.0, top: 50.0),
+          child: new Text('Start',
+              style:
+                  new TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold)),
+          color: Colors.green,
+          splashColor: Colors.greenAccent,
+          onPressed: () {
+            final snackBar =
+                new SnackBar(content: new Text('Zeiterfassung gestartet'));
+            Scaffold.of(context).showSnackBar(snackBar);
+          },
+        ),
+        /*child: new Text(
+          'Start',
+          textAlign: TextAlign.center,
+          style: new TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
+        ), */
+      ),
+    );
+    /* return new Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         new RaisedButton(
@@ -20,6 +44,9 @@ class Auto extends StatelessWidget {
             splashColor: Colors.greenAccent,
             onPressed: () {
               print("Start");
+              new Column(
+                children: <Widget>[new Text('Test')],
+              );
             }),
         new Column(
           children: <Widget>[
@@ -44,6 +71,6 @@ class Auto extends StatelessWidget {
           ],
         ),
       ],
-    );
+    ); */
   }
 }
