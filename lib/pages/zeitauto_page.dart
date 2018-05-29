@@ -25,11 +25,6 @@ class Auto extends StatelessWidget {
             Scaffold.of(context).showSnackBar(snackBar);
           },
         ),
-        /*child: new Text(
-          'Start',
-          textAlign: TextAlign.center,
-          style: new TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
-        ), */
       ),
     );
     /* return new Column(
