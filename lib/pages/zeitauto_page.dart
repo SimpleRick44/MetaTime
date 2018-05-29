@@ -3,10 +3,43 @@ import 'package:flutter/material.dart';
 class Auto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   return new ListView(
-     children: <Widget>[
-       new Text("Test",textAlign: TextAlign.center,style: new TextStyle(fontSize: 23.0, fontFamily: "helvetica",color: Colors.grey))
-     ]
-   );
+    return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        new RaisedButton(
+          padding: const EdgeInsets.only(
+              top: 30.0, bottom: 30.0, left: 60.0, right: 60.0),
+          child: const Icon(Icons.timer),
+          color: Colors.green,
+          elevation: 4.0,
+          splashColor: Colors.greenAccent,
+          onPressed: () {
+            print("Start");
+          },
+        ),
+        new Column(
+          children: <Widget>[
+            new Container(
+              padding: const EdgeInsets.only(top: 200.0),
+            )
+          ],
+        ),
+        new Column(
+          children: <Widget>[
+            new RaisedButton(
+              padding: const EdgeInsets.only(
+                  top: 30.0, bottom: 30.0, left: 60.0, right: 60.0),
+              child: const Icon(Icons.timer_off),
+              color: Colors.red,
+              elevation: 4.0,
+              splashColor: Colors.redAccent,
+              onPressed: () {
+                print("Ende");
+              },
+            )
+          ],
+        ),
+      ],
+    );
   }
 }
