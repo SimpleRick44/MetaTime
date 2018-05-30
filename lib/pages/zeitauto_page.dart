@@ -12,7 +12,6 @@ class Auto extends StatefulWidget {
 
 class _AutoState extends State<Auto> {
   Color _myColor = Colors.green;
-  String _myButtonState = 'NULL';
   Color _farbeBox = Colors.green;
   String _buttonText = 'Start';
   var _zeitGestartet = 'Gestartet: ';
