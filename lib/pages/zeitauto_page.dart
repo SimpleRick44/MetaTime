@@ -26,7 +26,6 @@ class _AutoState extends State<Auto> {
         headers: {"Accept": "application/json"});
     data = JSON.decode(response.body);
     print(data["status"]);
-    print(data["formatted"]);
 
     return "Success!";
   }
