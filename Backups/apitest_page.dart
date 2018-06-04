@@ -11,29 +11,24 @@ class Kunden extends StatefulWidget {
 
 class KundenPageState extends State<Kunden> {
 
+  String displayedsring = "";
+
   var data;
 
   Future<String> getData() async {
     var response = await http.get(
-      Uri.encodeFull("http://192.168.178.55:5000/api/kunden"),
+      Uri.encodeFull("http://api.timezonedb.com/v2/get-time-zone?key=3NEWA7XBCFKW&format=json&by=zone&zone=Europe/Berlin"),
       headers: {
-        "Accept": "application/json",
-        "X-Auth-Token": "809ebe22-4ac1-416b-9fbf-ef5ec85303a1"
+        "Accept": "application/json"
       }
     );
-  print(response.body);
-    this.setState(() {
-      data = JSON.decode(response.body);
-    });
-  
-    
-    return "Success!";
-  }
 
-  @override
-  void initState() {
-    super.initState();
-    this.getData();
+    
+      data = JSON.decode(response.body);
+         setState(() {
+        displayedsring = data["formatted"];
+      });
+    return "Success!";
   }
 
   @override
@@ -42,10 +37,17 @@ class KundenPageState extends State<Kunden> {
       appBar: new AppBar(
         title: new Text("Kunden"),
       ),
-      body: new ListView(
+      body: new Center(
+     child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Text(data["kunden"])
+          new Text(displayedsring),
+          new RaisedButton(
+            child: new Text('GetData'),
+            onPressed: getData,
+          )
         ],
+      )
       )
     );
   }
