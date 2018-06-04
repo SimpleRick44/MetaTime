@@ -21,18 +21,11 @@ class KundenPageState extends State<Kunden> {
       }
     );
 
-    this.setState(() {
+    
       data = JSON.decode(response.body);
-    });
-    print(data["status"]);
+      print(data["status"]);
     
     return "Success!";
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    this.getData();
   }
 
   @override
@@ -41,14 +34,14 @@ class KundenPageState extends State<Kunden> {
       appBar: new AppBar(
         title: new Text("Kunden"),
       ),
-      body: new ListView.builder(
-        itemCount: data == null ? 0 : data.length,
-        itemBuilder: (BuildContext context, int index) {
-          return new Card(
-            child: new Text(data["formatted"]),
-          );
-        },
-      ),
+      body: new Center(
+        child: new RaisedButton(
+          child: new Text(
+            "Get Data"
+          ),
+          onPressed: data,
+        ),
+      )
     );
   }
 }
