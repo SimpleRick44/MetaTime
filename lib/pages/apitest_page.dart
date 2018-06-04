@@ -17,16 +17,18 @@ class KundenPageState extends State<Kunden> {
 
   Future<String> getData() async {
     var response = await http.get(
-      Uri.encodeFull("http://api.timezonedb.com/v2/get-time-zone?key=3NEWA7XBCFKW&format=json&by=zone&zone=Europe/Berlin"), headers: {
-        "Accept": "application/json"
-      });
-       setState(() {
+      Uri.encodeFull("http://api.timezonedb.com/v2/get-time-zone?key=3NEWA7XBCFKW&format=json&by=zone&zone=Europe/Berlin"),
+      child: setState(() {
         displayedsring = data["status"];
-      });
+      }),
+      headers: {
+        "Accept": "application/json"
+      }
+    );
 
     
       data = JSON.decode(response.body);
-      print(data["status"]);
+      (data["status"]);
     return "Success!";
   }
 
