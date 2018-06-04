@@ -24,9 +24,9 @@ class KundenPageState extends State<Kunden> {
         "Referer": "http://192.168.178.55:5000/"
       }
     );
-  print(response.body);
     this.setState(() {
       data = JSON.decode(response.body);
+      data["KundenNr"].toString();
     });
   
     
