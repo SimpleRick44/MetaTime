@@ -18,7 +18,10 @@ class KundenPageState extends State<Kunden> {
       Uri.encodeFull("http://192.168.178.55:5000/api/kunden"),
       headers: {
         "Accept": "application/json",
-        "X-Auth-Token": "809ebe22-4ac1-416b-9fbf-ef5ec85303a1"
+        "X-Auth-Token": "0ce0d5ab-76d3-4e06-ae8b-fc083cdb476e",
+        "Connection": "keep-alive",
+        "Host": "192.168.178.55:5000",
+        "Referer": "http://192.168.178.55:5000/"
       }
     );
   print(response.body);
@@ -44,7 +47,9 @@ class KundenPageState extends State<Kunden> {
       ),
       body: new ListView(
         children: <Widget>[
-          new Text(data["kunden"])
+          new Text(data["KundenNr"]),
+          new Text(data["Firma"]),
+          new Text(data["Strasse"])
         ],
       )
     );
