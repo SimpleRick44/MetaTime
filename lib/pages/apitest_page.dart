@@ -11,20 +11,22 @@ class Kunden extends StatefulWidget {
 
 class KundenPageState extends State<Kunden> {
 
+  String displayedsring = "";
+
   var data;
 
   Future<String> getData() async {
     var response = await http.get(
-      Uri.encodeFull("http://api.timezonedb.com/v2/get-time-zone?key=3NEWA7XBCFKW&format=json&by=zone&zone=Europe/Berlin"),
-      headers: {
+      Uri.encodeFull("http://api.timezonedb.com/v2/get-time-zone?key=3NEWA7XBCFKW&format=json&by=zone&zone=Europe/Berlin"), headers: {
         "Accept": "application/json"
-      }
-    );
+      });
+       setState(() {
+        displayedsring = data["status"];
+      });
 
     
       data = JSON.decode(response.body);
       print(data["status"]);
-    
     return "Success!";
   }
 
@@ -35,12 +37,16 @@ class KundenPageState extends State<Kunden> {
         title: new Text("Kunden"),
       ),
       body: new Center(
-        child: new RaisedButton(
-          child: new Text(
-            "Get Data"
-          ),
-          onPressed: data,
-        ),
+     child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Text(displayedsring),
+          new RaisedButton(
+            child: new Text('GetData'),
+            onPressed: getData,
+          )
+        ],
+      )
       )
     );
   }
