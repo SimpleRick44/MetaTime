@@ -15,13 +15,13 @@ class KundenPageState extends State<Kunden> {
 
   Future<String> getData() async {
     var response = await http.get(
-      Uri.encodeFull("http://192.168.178.55:5000/api/kunden"),
+      Uri.encodeFull("http://192.168.178.205:5000/api/kunden"),
       headers: {
         "Accept": "application/json",
         "X-Auth-Token": "0ce0d5ab-76d3-4e06-ae8b-fc083cdb476e",
         "Connection": "keep-alive",
-        "Host": "192.168.178.55:5000",
-        "Referer": "http://192.168.178.55:5000/"
+        "Host": "192.168.178.205:5000",
+        "Referer": "http://192.168.178.205:5000/"
       }
     );
     this.setState(() {
