@@ -101,7 +101,7 @@ Future<String> getData3() async {
             children: <Widget>[
               new RaisedButton(
                 padding: EdgeInsets.only(
-                    left: 85.0, right: 85.0, top: 30.0, bottom: 50.0),
+                    left: 85.0, right: 85.0, top: 30.0, bottom: 40.0),
                 color: Colors.blue,
                 child: new Text(
                   "Start",
@@ -131,7 +131,7 @@ Future<String> getData3() async {
               ),
               new RaisedButton(
                 padding: EdgeInsets.only(
-                    left: 85.0, right: 85.0, top: 30.0, bottom: 50.0),
+                    left: 85.0, right: 85.0, top: 30.0, bottom: 40.0),
                 color: Colors.red,
                 child: new Text(
                   "Stopp",
