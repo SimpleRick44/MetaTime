@@ -18,7 +18,7 @@ class KundenPageState extends State<Kunden> {
         headers: {
           "Accept": "application/json",
           "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "db864ad4-809a-46df-8eb3-2f98828fdd38",
+          "X-Auth-Token": "cffb1b7b-ac2e-46c7-8392-a92093cf5a4a",
           "Connection": "keep-alive",
           "Host": "192.168.178.205:5000",
           "Referer": "http://192.168.178.205:5000/"
@@ -47,18 +47,17 @@ class KundenPageState extends State<Kunden> {
         body: new ListView.builder(
             itemCount: data == null ? 0 : data.length,
             itemBuilder: (BuildContext context, int index) {
-               return new Card(
-                 child: new Column(
-                   mainAxisSize: MainAxisSize.min,
-                   children: <Widget>[
-                     ListTile(
-                       leading: Icon(Icons.person),
-                       title: Text(data[index]["firma"]),
-                       subtitle: Text(data[index]["strasse"]),
-                     )
-                   ],
-                 )  
-               );
+              return new Card(
+                  child: new Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text(data[index]["firma"]),
+                    subtitle: Text(data[index]["strasse"] + '   ' + data[index]["plz"] + ' ' + data[index]["ort"]),
+                  ),
+                ],
+              ));
             }));
   }
 }
