@@ -75,6 +75,28 @@ Future<String> getData3() async {
     return new ListView(
       children: <Widget>[
         new Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new DropdownButton(
+             hint: new Text("Kunde"),
+                items: <String>['TestFirma', 'TestFirma2'].map((String value) {
+                  return new DropdownMenuItem<String>(
+                    value: value,
+                    child: new Text(value),
+                  );
+                }).toList(),
+                onChanged: (_) {},
+              ),
+          ],
+        ),
+        new Column(
+                children: <Widget>[
+                  new Container(
+                    padding: const EdgeInsets.only(top: 00.2),
+                  )
+                ],
+              ),
+        new Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               new RaisedButton(

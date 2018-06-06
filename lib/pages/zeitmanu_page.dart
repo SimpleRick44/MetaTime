@@ -65,6 +65,16 @@ class Manu extends StatelessWidget {
                 filled: true,
                 labelText: 'Abschluss Uhrzeit'),
           ),
+           new DropdownButton(
+             hint: new Text("Kunde"),
+                items: <String>['TestFirma', 'TestFirma2'].map((String value) {
+                  return new DropdownMenuItem<String>(
+                    value: value,
+                    child: new Text(value),
+                  );
+                }).toList(),
+                onChanged: (_) {},
+              ),
           new Column(
             children: <Widget>[
               new Container(
