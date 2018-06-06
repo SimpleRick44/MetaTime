@@ -27,7 +27,7 @@ class KundenPageState extends State<Kunden> {
     this.setState(() {
       data = JSON.decode(response.body);
     });
-    print(data[0]["kundenNr"]);
+
 
     return "Success!";
   }

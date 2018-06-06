@@ -42,6 +42,34 @@ class _AutoState extends State<Auto> {
     });
     return "Success!";
   }
+
+Future<String> getData3() async {
+    var response = await http.get(
+        Uri.encodeFull("http://192.168.178.205:5000/api/kunden"),
+        headers: {
+          "Accept": "application/json",
+          "Accept-Encoding": "gzip, deflate",
+          "X-Auth-Token": "cffb1b7b-ac2e-46c7-8392-a92093cf5a4a",
+          "Connection": "keep-alive",
+          "Host": "192.168.178.205:5000",
+          "Referer": "http://192.168.178.205:5000/"
+        });
+
+    this.setState(() {
+      data = JSON.decode(response.body);
+    });
+  
+
+    return "Success!";
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this.getData3();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return new ListView(
