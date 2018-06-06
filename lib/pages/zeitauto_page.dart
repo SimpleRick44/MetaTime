@@ -49,7 +49,7 @@ Future<String> getData3() async {
         headers: {
           "Accept": "application/json",
           "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "cffb1b7b-ac2e-46c7-8392-a92093cf5a4a",
+          "X-Auth-Token": "a7f8796e-1e4f-4ce0-a971-fb544cd1057e",
           "Connection": "keep-alive",
           "Host": "192.168.178.205:5000",
           "Referer": "http://192.168.178.205:5000/"
