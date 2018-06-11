@@ -30,7 +30,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
             backgroundColor: Colors.grey,
             actions: <Widget>[
               new DropdownButton(
-                items: <String>['Test', 'Test2'].map((String value) {
+                items: <String>['Arbeitsbericht', 'Besuchsbericht'].map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
                     child: new Text(value),
