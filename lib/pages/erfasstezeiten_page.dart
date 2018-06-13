@@ -18,7 +18,7 @@ class ZeitenPageState extends State<Zeiten> {
         headers: {
           "Accept": "application/json",
           "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "7caae825-1d13-40d6-9992-f7157ae7bcd7",
+          "X-Auth-Token": "445c10f6-c63f-477d-87f5-a916419b0776",
           "Connection": "keep-alive",
           "Host": "192.168.178.205:5000",
           "Referer": "http://192.168.178.217:5000/"
@@ -43,7 +43,7 @@ class ZeitenPageState extends State<Zeiten> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text("Berichte"),
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.blue[900],
         ),
         body: new ListView.builder(
             itemCount: data == null ? 0 : data.length,

@@ -27,18 +27,9 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     return new Scaffold(
         appBar: new AppBar(
             title: new Text("Zeit erfassen"),
-            backgroundColor: Colors.grey,
-            actions: <Widget>[
-              new DropdownButton(
-                items: <String>['Arbeitsbericht', 'Besuchsbericht'].map((String value) {
-                  return new DropdownMenuItem<String>(
-                    value: value,
-                    child: new Text(value),
-                  );
-                }).toList(),
-                onChanged: (_) {},
-              )
-            ]),
+            centerTitle: true,
+            backgroundColor: Colors.blue[900],
+        ),
         bottomNavigationBar: new Material(
             color: Colors.white,
             child: new TabBar(

@@ -4,9 +4,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import './navigationsbar_page.dart';
 
-
-
-
 class Auto extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -43,22 +40,21 @@ class _AutoState extends State<Auto> {
     return "Success!";
   }
 
-Future<String> getData3() async {
+  Future<String> getData3() async {
     var response = await http.get(
-        Uri.encodeFull("http://192.168.178.205:5000/api/kunden"),
+        Uri.encodeFull("http://192.168.178.217:5000/api/kunden"),
         headers: {
           "Accept": "application/json",
           "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "a7f8796e-1e4f-4ce0-a971-fb544cd1057e",
+          "X-Auth-Token": "445c10f6-c63f-477d-87f5-a916419b0776",
           "Connection": "keep-alive",
           "Host": "192.168.178.205:5000",
-          "Referer": "http://192.168.178.205:5000/"
+          "Referer": "http://192.168.178.217:5000/"
         });
 
     this.setState(() {
       data = JSON.decode(response.body);
     });
-  
 
     return "Success!";
   }
@@ -69,128 +65,86 @@ Future<String> getData3() async {
     this.getData3();
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return new ListView(
-      children: <Widget>[
-        new Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+    return new ListView(children: <Widget>[
+      new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[],
+      ),
+      new Container(
+        height: 100.0,
+        color: Colors.blue[900],
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            new DropdownButton(
-             hint: new Text("Kunde"),
-                items: <String>['TestFirma', 'TestFirma2'].map((String value) {
-                  return new DropdownMenuItem<String>(
-                    value: value,
-                    child: new Text(value),
-                  );
-                }).toList(),
-                onChanged: (_) {},
-              ),
+            new FloatingActionButton(
+              heroTag: "start",
+              child: new Text("Start"),
+              backgroundColor: Colors.lightGreen[600],
+              elevation: 30.0,
+              onPressed: getData,
+            ),
+            new Container(padding: const EdgeInsets.only(left: 20.0)),
+            new Text(
+              displayedsring,
+              style: new TextStyle(color: Colors.white, fontSize: 20.0),
+            ),
+            new Container(
+              padding: const EdgeInsets.only(left: 10.0),
+            ),
           ],
         ),
-        new Column(
-                children: <Widget>[
-                  new Container(
-                    padding: const EdgeInsets.only(top: 00.2),
-                  )
-                ],
-              ),
-        new Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              new RaisedButton(
-                padding: EdgeInsets.only(
-                    left: 85.0, right: 85.0, top: 30.0, bottom: 40.0),
-                color: Colors.blue,
-                child: new Text(
-                  "Start",
-                  style: new TextStyle(fontSize: 55.0),
-                ),
-                onPressed: getData,
-              ),
-              new Column(
-                children: <Widget>[
-                  new Container(
-                    padding: const EdgeInsets.only(top: 20.0),
-                  )
-                ],
-              ),
-              new Text(
-                displayedsring,
-                style: new TextStyle(
-                  fontSize: 20.0,
-                ),
-              ),
-              new Column(
-                children: <Widget>[
-                  new Container(
-                    padding: const EdgeInsets.only(top: 20.0),
-                  )
-                ],
-              ),
-              new RaisedButton(
-                padding: EdgeInsets.only(
-                    left: 85.0, right: 85.0, top: 30.0, bottom: 40.0),
-                color: Colors.red,
-                child: new Text(
-                  "Stopp",
-                  style: new TextStyle(fontSize: 55.0),
-                ),
-                onPressed: getData2,
-              ),
-              new Column(
-                children: <Widget>[
-                  new Container(
-                    padding: const EdgeInsets.only(top: 20.0),
-                  )
-                ],
-              ),
-              new Text(
-                displayedstring2,
-                style: new TextStyle(
-                  fontSize: 20.0,
-                ),
-              ),
-              new Column(
-                children: <Widget>[
-                  new Container(
-                    padding: const EdgeInsets.only(top: 20.0),
-                  )
-                ],
-              ),
-              new Row(children: <Widget>[
-                new Expanded(
-                  child: new RaisedButton(
-                      color: Colors.red,
-                      child: new Text(
-                        "Löschen",
-                        style: new TextStyle(
-                            fontSize: 20.0, fontWeight: FontWeight.bold),
-                      ),
-                      padding: EdgeInsets.all(30.0),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                        Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new MyTabs()));
-                      }),
-                ),
-                new Expanded(
-                  child: new RaisedButton(
-                    color: Colors.lightGreen,
-                    child: new Text(
-                      "Speichern",
-                      style: new TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.bold),
-                    ),
-                    padding: EdgeInsets.all(30.0),
-                    onPressed: () {
-                      print("Speichern");
-                    }
-                  ),
-                ),
-              ]),
-            ])
-      ],
-    );
+      ),
+      new Container(
+        height: 100.0,
+        color: Colors.blue[900],
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            new FloatingActionButton(
+              heroTag: "stop",
+              child: new Text("Stop"),
+              backgroundColor: Colors.red,
+              elevation: 30.0,
+              onPressed: getData2,
+            ),
+            new Container(padding: const EdgeInsets.only(left: 20.0)),
+            new Text(
+              displayedstring2,
+              style: new TextStyle(color: Colors.white, fontSize: 20.0),
+            )
+          ],
+        ),
+      ),
+      new Text(
+        "Tätigkeit",
+        style: new TextStyle(fontSize: 50.0),
+        textAlign: TextAlign.left,
+      ),
+      new TextFormField(
+          keyboardType: TextInputType.multiline,
+          maxLines: 15,
+          maxLength: 1150,
+          maxLengthEnforced: true,
+          autocorrect: true,
+          textAlign: TextAlign.start,
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.only(bottom: 00.01),
+            border: const UnderlineInputBorder(
+                borderRadius: const BorderRadius.only(
+                    bottomRight: const Radius.circular(15.0),
+                    bottomLeft: const Radius.circular(15.0),
+                    topLeft: const Radius.circular(15.0),
+                    topRight: const Radius.circular(15.0))),
+            filled: true,
+          )),
+      new Container(
+          height: 100.0,
+          color: Colors.blue[900],
+          child: new Row(
+              mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+              ]))
+    ]);
   }
 }

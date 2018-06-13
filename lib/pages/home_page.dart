@@ -22,7 +22,7 @@ void switchUser() {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text("MetaTime"), backgroundColor: Colors.grey,),
+      appBar: new AppBar(title: new Text("MetaOffice"), backgroundColor: Colors.blue[900],centerTitle: true,),
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
@@ -79,6 +79,7 @@ void switchUser() {
           ],
         ),
       ),
+      body: new Image.asset('bilder/metalogo.png', fit: BoxFit.contain,),
     );
     
   }
