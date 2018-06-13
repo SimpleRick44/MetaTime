@@ -82,7 +82,7 @@ class _AutoState extends State<Auto> {
               heroTag: "start",
               child: new Text("Start"),
               backgroundColor: Colors.lightGreen[600],
-              elevation: 30.0,
+              elevation: 10.0,
               onPressed: getData,
             ),
             new Container(padding: const EdgeInsets.only(left: 20.0)),
@@ -106,7 +106,7 @@ class _AutoState extends State<Auto> {
               heroTag: "stop",
               child: new Text("Stop"),
               backgroundColor: Colors.red,
-              elevation: 30.0,
+              elevation: 10.0,
               onPressed: getData2,
             ),
             new Container(padding: const EdgeInsets.only(left: 20.0)),
@@ -129,6 +129,7 @@ class _AutoState extends State<Auto> {
           maxLengthEnforced: true,
           autocorrect: true,
           textAlign: TextAlign.start,
+          style: new TextStyle(fontSize: 30.0, color: Colors.black),
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.only(bottom: 00.01),
             border: const UnderlineInputBorder(
