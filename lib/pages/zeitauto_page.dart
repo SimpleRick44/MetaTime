@@ -72,6 +72,7 @@ class _AutoState extends State<Auto> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[],
       ),
+      
       new Container(
         height: 100.0,
         color: Colors.blue[900],
@@ -141,11 +142,12 @@ class _AutoState extends State<Auto> {
             filled: true,
           )),
       new Container(
-          height: 100.0,
-          color: Colors.blue[900],
-          child: new Row(
-              mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
-              ]))
+        height: 100.0,
+        color: Colors.blue[900],
+        child: new Row(
+            mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+            ]),
+      )
     ]);
   }
 }

@@ -43,6 +43,7 @@ class ZeitenPageState extends State<Zeiten> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text("Berichte"),
+          centerTitle: true,
           backgroundColor: Colors.blue[900],
         ),
         body: new ListView.builder(
