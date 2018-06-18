@@ -177,7 +177,9 @@ class _AutoState extends State<Auto> {
                 icon: new Icon(Icons.people),
                 onPressed: _showModalSheet,
               ),
-              new Text("Kunden")
+              new Text("Kunden"),
+              new IconButton(icon: Icon(Icons.save), onPressed: () {},),
+              new Text("Speichern")
             ]),
       )
     ]);
