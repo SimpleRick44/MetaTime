@@ -18,7 +18,7 @@ class ZeitenPageState extends State<Zeiten> {
         headers: {
           "Accept": "application/json",
           "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "445c10f6-c63f-477d-87f5-a916419b0776",
+          "X-Auth-Token": "a345fa9f-7c3b-4db1-af5e-9a050205dc1c",
           "Connection": "keep-alive",
           "Host": "192.168.178.205:5000",
           "Referer": "http://192.168.178.217:5000/"

@@ -146,7 +146,7 @@ class _AutoState extends State<Auto> {
       ),
       new Text(
         "Tätigkeit",
-        style: new TextStyle(fontSize: 50.0),
+        style: new TextStyle(fontSize: 50.0,),
         textAlign: TextAlign.left,
       ),
       new TextFormField(
@@ -176,7 +176,8 @@ class _AutoState extends State<Auto> {
               new IconButton(
                 icon: new Icon(Icons.people),
                 onPressed: _showModalSheet,
-              )
+              ),
+              new Text("Kunden")
             ]),
       )
     ]);

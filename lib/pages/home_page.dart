@@ -3,10 +3,13 @@ import './navigationsbar_page.dart';
 import './erfasstezeiten_page.dart';
 //import './kunden_page.dart';
 import './apitest_page.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
 }
+
+
 
 class _HomePageState extends State<HomePage> {
 String Pb1 = "https://www.metacarp.de/wp-content/uploads/2017/10/Alexxircle1-150x150.png";
@@ -79,7 +82,6 @@ void switchUser() {
           ],
         ),
       ),
-      body: new Image.asset('bilder/metalogo.png', fit: BoxFit.contain,),
     );
     
   }
