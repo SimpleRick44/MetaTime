@@ -92,6 +92,24 @@ class _AutoState extends State<Auto> {
         });
   }
 
+  void _showModalSheet2() {
+    showModalBottomSheet(
+        context: context,
+        builder: (builder) {
+          return new ListView(children: <Widget>[
+            new Card(
+                child: new Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                new FlatButton(child: new Text("Arbeitsbericht"), onPressed: () {},),
+                new Divider(),
+               new FlatButton(child: new Text("Besuchsbericht"), onPressed: () {},),
+              ],
+            ))
+          ]);
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new ListView(children: <Widget>[
@@ -146,7 +164,9 @@ class _AutoState extends State<Auto> {
       ),
       new Text(
         "Tätigkeit",
-        style: new TextStyle(fontSize: 50.0,),
+        style: new TextStyle(
+          fontSize: 50.0,
+        ),
         textAlign: TextAlign.left,
       ),
       new TextFormField(
@@ -169,17 +189,40 @@ class _AutoState extends State<Auto> {
           )),
       new Container(
         height: 100.0,
+        width: 150.0,
         color: Colors.blue[900],
         child: new Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              new IconButton(
-                icon: new Icon(Icons.people),
-                onPressed: _showModalSheet,
+              new Expanded(
+                child: new IconButton(
+                  icon: new Icon(Icons.people),
+                  onPressed: _showModalSheet,
+                  iconSize: 30.0,
+                ),
               ),
               new Text("Kunden"),
-              new IconButton(icon: Icon(Icons.save), onPressed: () {},),
-              new Text("Speichern")
+              new IconButton(
+                icon: Icon(Icons.account_box),
+                iconSize: 30.0,
+                onPressed: _showModalSheet2,
+              ),
+              new Text("Bericht"),
+              new IconButton(
+                icon: Icon(Icons.save),
+                iconSize: 30.0,
+                onPressed: () {},
+              ),
+              new Text("Speichern"),
+              new IconButton(
+                  icon: Icon(Icons.cancel),
+                  iconSize: 30.0,
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(new MaterialPageRoute(
+                        builder: (BuildContext context) => new MyTabs()));
+                  }),
+              new Text("Abbrechen")
             ]),
       )
     ]);
