@@ -15,6 +15,7 @@ class _AutoState extends State<Auto> {
   var data;
   String displayedsring = "";
   String displayedstring2 = "";
+  var data3;
 
   Future<String> getData() async {
     var response = await http.get(
@@ -46,14 +47,14 @@ class _AutoState extends State<Auto> {
         headers: {
           "Accept": "application/json",
           "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "445c10f6-c63f-477d-87f5-a916419b0776",
+          "X-Auth-Token": "a345fa9f-7c3b-4db1-af5e-9a050205dc1c",
           "Connection": "keep-alive",
           "Host": "192.168.178.205:5000",
           "Referer": "http://192.168.178.217:5000/"
         });
 
     this.setState(() {
-      data = JSON.decode(response.body);
+      data3 = JSON.decode(response.body);
     });
 
     return "Success!";
@@ -65,6 +66,32 @@ class _AutoState extends State<Auto> {
     this.getData3();
   }
 
+  void _showModalSheet() {
+    showModalBottomSheet(
+        context: context,
+        builder: (builder) {
+          return new ListView.builder(
+              itemCount: data3 == null ? 0 : data3.length,
+              itemBuilder: (BuildContext context, int index) {
+                return new Card(
+                    child: new Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    ListTile(
+                      leading: Icon(Icons.person),
+                      title: Text(data3[index]["firma"]),
+                      subtitle: Text(data3[index]["strasse"] +
+                          '   ' +
+                          data3[index]["plz"] +
+                          ' ' +
+                          data3[index]["ort"]),
+                    ),
+                  ],
+                ));
+              });
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new ListView(children: <Widget>[
@@ -72,7 +99,6 @@ class _AutoState extends State<Auto> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[],
       ),
-      
       new Container(
         height: 100.0,
         color: Colors.blue[900],
@@ -83,7 +109,7 @@ class _AutoState extends State<Auto> {
               heroTag: "start",
               child: new Text("Start"),
               backgroundColor: Colors.lightGreen[600],
-              elevation: 10.0,
+              elevation: 09.0,
               onPressed: getData,
             ),
             new Container(padding: const EdgeInsets.only(left: 20.0)),
@@ -107,7 +133,7 @@ class _AutoState extends State<Auto> {
               heroTag: "stop",
               child: new Text("Stop"),
               backgroundColor: Colors.red,
-              elevation: 10.0,
+              elevation: 09.0,
               onPressed: getData2,
             ),
             new Container(padding: const EdgeInsets.only(left: 20.0)),
@@ -145,7 +171,12 @@ class _AutoState extends State<Auto> {
         height: 100.0,
         color: Colors.blue[900],
         child: new Row(
-            mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              new IconButton(
+                icon: new Icon(Icons.people),
+                onPressed: _showModalSheet,
+              )
             ]),
       )
     ]);

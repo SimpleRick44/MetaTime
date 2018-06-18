@@ -28,7 +28,6 @@ class KundenPageState extends State<Kunden> {
       data = JSON.decode(response.body);
     });
 
-
     return "Success!";
   }
 
@@ -55,7 +54,11 @@ class KundenPageState extends State<Kunden> {
                   ListTile(
                     leading: Icon(Icons.person),
                     title: Text(data[index]["firma"]),
-                    subtitle: Text(data[index]["strasse"] + '   ' + data[index]["plz"] + ' ' + data[index]["ort"]),
+                    subtitle: Text(data[index]["strasse"] +
+                        '   ' +
+                        data[index]["plz"] +
+                        ' ' +
+                        data[index]["ort"]),
                   ),
                 ],
               ));
