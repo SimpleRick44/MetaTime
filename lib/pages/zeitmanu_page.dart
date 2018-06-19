@@ -39,10 +39,10 @@ class _ManuState extends State<Manu> {
       lastDate: new DateTime(2030).toLocal()
       
     );
-    if (picked != null && picked != _date) {
+    if (picked != null && picked != _date2) {
       print('Date: ${_date2.toString()}'); 
       setState(() {
-              _date = picked;
+              _date2 = picked;
             });
     }
   }
