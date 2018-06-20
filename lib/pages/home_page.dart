@@ -3,6 +3,7 @@ import './navigationsbar_page.dart';
 import './erfasstezeiten_page.dart';
 //import './kunden_page.dart';
 import './apitest_page.dart';
+import './data.class.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ void switchUser() {
           children: <Widget>[
             new UserAccountsDrawerHeader(
               accountName: new Text("Admin",style: new TextStyle(color: Colors.black, fontSize: 23.0),),
-              accountEmail: new Text("admin@metacarp.de", style: new TextStyle(color: Colors.black, fontSize: 15.0),),
+              accountEmail: new Text(ArgonData.data.user, style: new TextStyle(color: Colors.black, fontSize: 15.0),),
               currentAccountPicture: new GestureDetector(
                 child: new CircleAvatar(
                  backgroundImage: new NetworkImage(Pb1)
@@ -46,7 +47,7 @@ void switchUser() {
               decoration: new BoxDecoration(
                 image: new DecorationImage(
                   fit: BoxFit.contain,
-                  image: new NetworkImage("https://www.metacarp.de/wp-content/uploads/2017/10/logo_metacarp-e1508146599603.png")
+                  image: new AssetImage("bilder/logo.png")
                 )
               ),
             ),
@@ -55,7 +56,7 @@ void switchUser() {
               trailing: new Icon(Icons.timer),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new MyTabs()));
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new Kunden()));
               }
             ),
              new ListTile(
@@ -82,7 +83,8 @@ void switchUser() {
           ],
         ),
       ),
-    );
+      body: new Image.asset("bilder/Ebene4.png", fit: BoxFit.cover,),);
+    
     
   }
 }

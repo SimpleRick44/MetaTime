@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
+import './data.class.dart';
 class Zeiten extends StatefulWidget {
   @override
   ZeitenPageState createState() => new ZeitenPageState();
@@ -12,25 +12,27 @@ class Zeiten extends StatefulWidget {
 class ZeitenPageState extends State<Zeiten> {
   List data;
 
-  Future<String> getData() async {
+  Future<void> getData() async {
+    if (ArgonData.data.token == null) return;
     var response = await http.get(
-        Uri.encodeFull("http://192.168.178.217:5000/api/kunden"),
-        headers: {
-          "Accept": "application/json",
-          "Accept-Encoding": "gzip, deflate",
-          "X-Auth-Token": "a345fa9f-7c3b-4db1-af5e-9a050205dc1c",
-          "Connection": "keep-alive",
-          "Host": "192.168.178.205:5000",
-          "Referer": "http://192.168.178.217:5000/"
-        });
-
+      Uri.encodeFull("http://192.168.178.217:5000/api/kunden"),
+      headers: {
+        "Accept": "application/json",
+        "X-Auth-Token": ArgonData.data.token,
+      },
+    );
+    if (response.statusCode != 200) return;
+    dynamic data;
+    try {
+      data = jsonDecode(response.body);
+    } catch (e) {
+      return;
+    }
     this.setState(() {
-      data = JSON.decode(response.body);
+      data = data;
     });
-
-
-    return "Success!";
   }
+
 
   @override
   void initState() {
