@@ -12,25 +12,19 @@ class Kunden extends StatefulWidget {
 class KundenPageState extends State<Kunden> {
   List data;
 
-   Future<void> getData() async {
-    if (ArgonData.data.token == null) return;
+  Future<String> getData() async {
     var response = await http.get(
-      Uri.encodeFull("http://192.168.178.217:5000/api/kunden"),
-      headers: {
-        "Accept": "application/json",
-        "X-Auth-Token": ArgonData.data.token,
-      },
-    );
-    if (response.statusCode != 200) return;
-    dynamic data;
-    try {
-      data = jsonDecode(response.body);
-    } catch (e) {
-      return;
-    }
+        Uri.encodeFull("http://192.168.178.217:5000/api/kunden"),
+        headers: {
+          "Accept": "application/json",
+          "X-Auth-Token": ArgonData.data.token,
+        });
+
     this.setState(() {
-      data = data;
+      data = JSON.decode(response.body);
     });
+
+    return "Success!";
   }
 
   @override

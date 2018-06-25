@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
     final col = new Column(
       children: <Widget>[
         new Container(
-          child: new Image.asset("bilder/logo.png"),
+          child: new Image.asset("bilder/metalogo.png", height: 60.0, fit: BoxFit.cover,alignment: Alignment.topLeft,),
           margin: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
         ),
         new TextField(
