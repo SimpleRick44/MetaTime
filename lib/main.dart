@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
       this.isLoggin = false;
     });
 
-    if (token.length > 0) {
+    if (token.length > ) {
       Navigator.push(
         context,
         new MaterialPageRoute(
