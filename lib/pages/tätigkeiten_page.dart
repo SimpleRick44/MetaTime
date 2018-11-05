@@ -9,6 +9,9 @@ class Auto extends StatefulWidget {
 }
 
 class _AutoState extends State<Auto> {
+  var _textController = new TextEditingController();
+   var _textController2 = new TextEditingController();
+ var _textController3 = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -34,6 +37,7 @@ class _AutoState extends State<Auto> {
           style: new TextStyle(fontSize: 30.0),
         ),
         new TextFormField(
+          controller: _textController,
           keyboardType: TextInputType.multiline,
           maxLines: 5,
           maxLength: 1150,
@@ -68,6 +72,7 @@ class _AutoState extends State<Auto> {
           style: new TextStyle(fontSize: 30.0),
         ),
         new TextFormField(
+          controller: _textController2,
           keyboardType: TextInputType.multiline,
           maxLines: 5,
           maxLength: 1150,
@@ -102,6 +107,7 @@ class _AutoState extends State<Auto> {
           style: new TextStyle(fontSize: 30.0),
         ),
         new TextFormField(
+          controller: _textController3,
           keyboardType: TextInputType.multiline,
           maxLines: 5,
           maxLength: 1150,
@@ -129,8 +135,8 @@ class _AutoState extends State<Auto> {
           children: <Widget>[
             new FlatButton(
                onPressed: () {
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => new Ueberischt()));
+               var route = new MaterialPageRoute(builder:(BuildContext context) => new Ueberischt(value: _textController.text), );
+               Navigator.of(context).push(route);
               },
               child: new Text("Übersicht", style: new TextStyle(fontSize: 20.0,),
              

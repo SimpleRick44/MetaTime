@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:intl/intl.dart';
 import './tätigkeiten_page.dart';
+import './übersicht_page.dart';
 class Manu extends StatefulWidget {
   @override
   ManuPageState createState() => new ManuPageState();
@@ -12,6 +13,7 @@ class ManuPageState extends State<Manu> {
   DateTime _date2 = new DateTime.now().toLocal();
   var arbeitsb = "";
   var besuchsb = "";
+  
 
   Future<Null> _selectDate(BuildContext context, int pos) async {
     final DateTime picked = await showDatePicker(
@@ -144,6 +146,7 @@ class ManuPageState extends State<Manu> {
                   new Text(
                     '${df.format(_date)}',
                     style: new TextStyle(fontSize: 22.0),
+                    
                   ),
                 ],
               ),
@@ -203,20 +206,26 @@ class ManuPageState extends State<Manu> {
                     ),
                   ])
             ]),
-        new Column(children: <Widget>[
-          new Text(
-            besuchsb,
-            style: new TextStyle(fontSize: 22.0),
-          ),
-        ]),
-        new Column(
+        new Text(
+          "Bericht",
+          style: new TextStyle(fontSize: 50.0),
+        ),
+           new Column(
           children: <Widget>[
-            new Text(
-              arbeitsb,
-              style: new TextStyle(fontSize: 22.0),
-            ),
+            new Container(
+              padding: const EdgeInsets.only(top: 10.0),
+            )
           ],
         ),
+        new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new Text(
+                besuchsb + "  " + arbeitsb,
+                style: new TextStyle(fontSize: 27.0),
+                textAlign: TextAlign.center,
+                             ),
+            ]),
         new Column(
           children: <Widget>[
             new Container(
